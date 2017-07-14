@@ -5,6 +5,6 @@ spring:
     show-sql: true
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/elp?characterEncoding=utf-8
+      url: jdbc:mysql://127.0.0.1:3306/elpdatabase?characterEncoding=utf-8
       username: zwpjava
       password: 12345678

@@ -77,12 +77,6 @@ public interface CourseRepository extends JpaRepository<Course,String> {
                     "and  tbc.del_time is null ",nativeQuery = true)
     public List<Course> findAllByUserIdOrderByCreatTime(String userId);
     //
-    /*
-     @Query(value = "SELECT tbc.* "+
-            "FROM tb_course as tbc, tb_course_office as tbco, tb_user as tbu "+
-            "where tbco.subject_name = ?1 and tbc.object_id = tbco.course_num "+
-            "and tbu.object_id = userand tbc.del_time is null ",nativeQuery = true)
-     */
     @Query("from Course course, CourseRelationOffice courseRelationOffice, User user "+
             "where courseRelationOffice.subjectName = ?1 and course.objectId = courseRelationOffice.courseNum "+
             "and user.objectId = ?2 and course.coursePower <= user.userPower and course.delTime is null ")
